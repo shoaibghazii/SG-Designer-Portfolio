@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG Designer - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1><a href="index.html" class="logo-link"><span class="logo">SG</span></a> Designer</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="hireme.html">Hire Me</a></li>
+        </ul>
+    </div>
+
+    <div class="portfolio-section">
+        <h2>My Portfolio</h2>
+        <div class="gallery">
+            <div class="thumbnail-card">
+                <img src="Propaganda Exposed.jpg" alt="Propaganda Exposed Thumbnail" class="thumbnail-img" onclick="openModal('Propaganda Exposed.jpg')">
+                <h3>Propaganda Exposed</h3>
+                <p>A bold thumbnail designed to grab attention for a hard-hitting exposé.</p>
+            </div>
+            <!-- Add more thumbnails here as needed -->
+        </div>
+    </div>
+
+    <!-- Modal for displaying full-size image -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>© 2025 Shoaib Ghazi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
